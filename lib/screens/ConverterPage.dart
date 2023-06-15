@@ -8,6 +8,19 @@ class ConverterPage extends StatefulWidget {
 }
 
 class _ConverterPageState extends State<ConverterPage> {
+  final currencyCode = [
+    'USD',
+    'EUR',
+    'GBP',
+    'IQD',
+    'AUD',
+    'CAD',
+    'JPY',
+    'HKD',
+    'CHF',
+    'SEK',
+    'ILS'
+  ];
   String fromCurrency = 'USD';
   String toCurrency = 'EUR';
   double conversionRate = 0.0;
@@ -91,19 +104,7 @@ class _ConverterPageState extends State<ConverterPage> {
                                 fetchExchangeRate();
                               });
                             },
-                            items: [
-                              'USD',
-                              'EUR',
-                              'GBP',
-                              'IQD',
-                              'AUD',
-                              'CAD',
-                              'JPY',
-                              'HKD',
-                              'CHF',
-                              'SEK',
-                              'ILS'
-                            ].map((currency) {
+                            items:currencyCode.map((currency) {
                               return DropdownMenuItem<String>(
                                 value: currency,
                                 child: Text(
@@ -137,19 +138,7 @@ class _ConverterPageState extends State<ConverterPage> {
                                 fetchExchangeRate();
                               });
                             },
-                            items: [
-                              'USD',
-                              'EUR',
-                              'GBP',
-                              'IQD',
-                              'AUD',
-                              'CAD',
-                              'JPY',
-                              'HKD',
-                              'CHF',
-                              'SEK',
-                              'ILS'
-                            ].map((currency) {
+                            items:currencyCode.map((currency) {
                               return DropdownMenuItem<String>(
                                 value: currency,
                                 child: Text(
