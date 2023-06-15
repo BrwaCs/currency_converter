@@ -4,7 +4,7 @@ Brwa Nahman Muhammed [Github](https://github.com/BrwaCs) | [Linkedin](https://ww
 
 ## Getting Started with this Project details and future 
 
-Clone repository `https://github.com/BrwaCs/currency_converter.git`
+Clone repository `git clone https://github.com/BrwaCs/currency_converter.git`
 
 and open `pubspec.yaml`
 
