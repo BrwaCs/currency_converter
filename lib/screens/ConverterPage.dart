@@ -35,7 +35,7 @@ class _ConverterPageState extends State<ConverterPage> {
       setState(() {
         isLoading = false;
       });
-      // Handle the error 
+      // Handle the error
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -72,50 +72,116 @@ class _ConverterPageState extends State<ConverterPage> {
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  DropdownButton<String>(
-                    value: fromCurrency,
-                    onChanged: (value) {
-                      setState(() {
-                        fromCurrency = value!;
-                        fetchExchangeRate();
-                      });
-                    },
-                    items: ['USD', 'EUR', 'GBP'].map((currency) {
-                      return DropdownMenuItem<String>(
-                        value: currency,
-                        child: Text(currency),
-                      );
-                    }).toList(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 25, vertical: 3),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.blue)),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            value: fromCurrency,
+                            onChanged: (value) {
+                              setState(() {
+                                fromCurrency = value!;
+                                fetchExchangeRate();
+                              });
+                            },
+                            items: [
+                              'USD',
+                              'EUR',
+                              'GBP',
+                              'IQD',
+                              'AUD',
+                              'CAD',
+                              'JPY',
+                              'HKD',
+                              'CHF',
+                              'SEK',
+                              'ILS'
+                            ].map((currency) {
+                              return DropdownMenuItem<String>(
+                                value: currency,
+                                child: Text(
+                                  currency,
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "TO",
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 25, vertical: 3),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.blue)),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            value: toCurrency,
+                            onChanged: (value) {
+                              setState(() {
+                                toCurrency = value!;
+                                fetchExchangeRate();
+                              });
+                            },
+                            items: [
+                              'USD',
+                              'EUR',
+                              'GBP',
+                              'IQD',
+                              'AUD',
+                              'CAD',
+                              'JPY',
+                              'HKD',
+                              'CHF',
+                              'SEK',
+                              'ILS'
+                            ].map((currency) {
+                              return DropdownMenuItem<String>(
+                                value: currency,
+                                child: Text(
+                                  currency,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 20),
-                  DropdownButton<String>(
-                    value: toCurrency,
-                    onChanged: (value) {
-                      setState(() {
-                        toCurrency = value!;
-                        fetchExchangeRate();
-                      });
-                    },
-                    items: ['USD', 'EUR', 'GBP'].map((currency) {
-                      return DropdownMenuItem<String>(
-                        value: currency,
-                        child: Text(currency),
-                      );
-                    }).toList(),
-                  ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: 'Amount',
-                      border: OutlineInputBorder(),
+                  SizedBox(height: 25),
+                  Container(
+                    width: 370,
+                    height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Amount',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: convertAmount,
                     ),
-                    onChanged: convertAmount,
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Converted Amount: ${(amount * conversionRate).toStringAsFixed(2)}',
-                    style: TextStyle(fontSize: 18),
+                    'Converted Amount : ${(amount * conversionRate).toStringAsFixed(2)}',
+                    style: TextStyle(fontSize: 20),
                   ),
                 ],
               ),
