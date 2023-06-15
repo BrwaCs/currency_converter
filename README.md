@@ -1,16 +1,26 @@
 # currency_converter
 
-A new Flutter project.
+Brwa Nahman Muhammed [Github](https://github.com/BrwaCs) | [Linkedin](https://www.linkedin.com/in/brwa-nahman-449996197) | [Stack Overflow](stackoverflow.com/users/19229945/brwa-nahman)
 
-## Getting Started
+## Getting Started with this Project details and future 
 
-This project is a starting point for a Flutter application.
+Clone repository `https://github.com/BrwaCs/currency_converter.git`
 
-A few resources to get you started if this is your first Flutter project:
+and open `pubspec.yaml`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+run `flutter packages get`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Technology is used in this application :
+
+- **Programing Language :** Dart Language
+- **Framework :** Flutter
+
+Packages are used :
+- http: ^1.0.0
+
+Details about the project :
+- in this Project, you can convert currency in real-time and using ExchangeRate-API to fetch real-time exchange rates.
+
+
+
+
